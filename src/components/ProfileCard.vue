@@ -121,10 +121,22 @@
             </v-col>
 
             <v-col class="green-b" cols="7">
-                <v-list
-                    :items="qualifications"
-                    item-title="name"
-                ></v-list>
+                あくまで自己評価です
+                <div 
+                    v-for="(rating, key) in ratings"
+                    :key="key"
+                >
+                
+                    {{ rating.skill }}
+                    <v-rating
+                        :model-value="rating.value"
+                        readonly="true"
+                        color="#82b0ff"
+                    >
+                    </v-rating>
+                    
+                </div>
+                
             </v-col>
         </v-row>
     </v-card>
@@ -149,12 +161,9 @@
         </v-row>
     </v-card>
 
-    <div class="text-center">
-    <v-rating
-      v-model="rating"
-      readonly
-    ></v-rating>
-  </div>
+    
+    
+  
 
 
 
@@ -168,6 +177,11 @@
 export default {
     data() {
         return {
+            ratings: [
+                { skill: "Java", value: "3" },
+                { skill: "Docker", value: "2" },
+                { skill: "Vue", value: "1" },
+            ],
             histories: [
                 {
                     id: 1,
