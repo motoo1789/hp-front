@@ -75,9 +75,41 @@
             </v-col>
 
             <v-col class="green-b" cols="7">
-                <v-list-item
+                <v-table>
+                    <thead>
+                    <tr>
+                        <th class="text-left">
+                        日付
+                        </th>
+                        <th class="text-left">
+                        タイトル
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            v-for="presentation in presentations"
+                            :key="presentation.name"
+                        >
+                            <td>{{ presentation.date }}</td>
+                            <!-- <component 
+                                :is="isExternalLink(presentation.url) ? 'a' : 'nuxt-link'"
+                                :href="isExternalLink(presentation.url) ? presentation.url : ''"
+                                :to="isExternalLink(presentation.url) ? '' : ''" 
+                            >
+                                <td>{{ presentation.title }}</td>
+
+                            </component> -->
+                            <td>
+                                <a :href="presentation.url">{{presentation.title}}</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </v-table>
+                <!-- <v-list-item
                     v-for="(presentation,key) in presentations"
                     :key="key"
+                    :href="presentation.url"
                 >
                     <template>
                         <v-text-field :message="presentation.date"></v-text-field>
@@ -91,10 +123,9 @@
                     </v-list-item-content>
 
                 
-                </v-list-item>
+                </v-list-item> -->
                     
             
-                
             </v-col>
         </v-row>
     </v-card>
@@ -109,32 +140,39 @@
 export default {
     data() {
         return {
-                histories: [
-                    {
-                        id: 1,
-                        text: "日本工業大学工学部情報工学科 卒業",
-                    },
-                    {
-                        id: 2,
-                        text: "日本工業大学工学研究科電子情報メディア工学専攻博士前期課程 修了見込み"
-                    }
-                ],
-                presentations: [
-                    {
-                        date: '2021-02-23',
-                        title: 'パターンの役割違反に着目したコード品質改善手法の提案',
-                        url: "https://www.ieice-taikai.jp/2021general/jpn/index.html"
+            histories: [
+                {
+                    id: 1,
+                    text: "日本工業大学工学部情報工学科 卒業",
+                },
+                {
+                    id: 2,
+                    text: "日本工業大学工学研究科電子情報メディア工学専攻博士前期課程 修了見込み"
+                }
+            ],
+            presentations: [
+                {
+                    date: '2021-02-23',
+                    title: 'パターンの役割違反に着目したコード品質改善手法の提案',
+                    url: "https://www.ieice-taikai.jp/2021general/jpn/index.html"
 
-                    },
-                    {
-                        date: '2022-01-21',
-                        title: 'クラス図とソースコード間のラウンドトリップエンジニアリング支援ツール',
-                        url: "https://ken.ieice.org/ken/program/index.php?tgs_regid=c7e66ae8eec06d72f88ac1147e021d278969659589d143d7de3bb4d5e2aaa315&tgid=IEICE-KBSE"
-                    }
-                ]
-            
+                },
+                {
+                    date: '2022-01-21',
+                    title: 'クラス図とソースコード間のラウンドトリップエンジニアリング支援ツール',
+                    url: "https://ken.ieice.org/ken/program/index.php?tgs_regid=c7e66ae8eec06d72f88ac1147e021d278969659589d143d7de3bb4d5e2aaa315&tgid=IEICE-KBSE"
+                }
+            ]
         }
     },
+    methods: {
+        isExternalLink(path)
+        {
+            const pattern = /^(http|https|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|]/i;
+            return pattern.test(path)
+        }
+    }
+    
 }
 </script>
 
