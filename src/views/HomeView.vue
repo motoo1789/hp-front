@@ -1,6 +1,8 @@
 <template>
   <ProfileCard />
+  <WorkhistorySkils />
   <HelloWorld />
+  
 </template>
 
 <script>
@@ -9,6 +11,7 @@ import { defineComponent } from 'vue';
 // Components
 import HelloWorld from '../components/HelloWorld.vue';
 import ProfileCard from '../components/ProfileCard.vue';
+import WorkhistorySkils from '../components/WorkhistorySkils.vue';
 
 
 export default defineComponent({
@@ -16,7 +19,8 @@ export default defineComponent({
 
   components: {
     HelloWorld,
-    ProfileCard
+    ProfileCard,
+    WorkhistorySkils,
   },
 });
 </script>
