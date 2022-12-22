@@ -1,4 +1,5 @@
 <template>
+  <PersonalProject />
   <ProfileCard />
   <WorkhistorySkils />
   <HelloWorld />
@@ -12,6 +13,7 @@ import { defineComponent } from 'vue';
 import HelloWorld from '../components/HelloWorld.vue';
 import ProfileCard from '../components/ProfileCard.vue';
 import WorkhistorySkils from '../components/WorkhistorySkils.vue';
+import PersonalProject from '../components/PersonalProject.vue';
 
 
 export default defineComponent({
@@ -21,6 +23,7 @@ export default defineComponent({
     HelloWorld,
     ProfileCard,
     WorkhistorySkils,
+    PersonalProject,
   },
 });
 </script>

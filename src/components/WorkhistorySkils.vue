@@ -144,18 +144,7 @@ export default {
 </script>
 
 <style>
-.blue-b{
-    border: 1px blue solid
-}
-/* 
-.rating-container {
-    display: flex;
-    align-items: center;
-}
-*/
-.rating-label {
-    margin-right: 1px;
-} 
-
-
+    .blue-b{
+        border: 1px blue solid
+    }
 </style>

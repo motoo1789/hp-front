@@ -99,7 +99,7 @@
 
                             </component> -->
                             <td>
-                                <a :href="presentation.url">{{presentation.title}}</a>
+                                <a :href="presentation.url">{{ presentation.title }}</a>
                             </td>
                         </tr>
                     </tbody>
