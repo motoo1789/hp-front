@@ -79,12 +79,13 @@
                                         <div class="ml-3 mt-4 mb-3">
                                             <v-row class="">
 
-                                                <v-col cols="3">
+                                                <v-col xs="4" sm="3" md="3" lg="3" xl="3">
                                                     <v-row  align-content="center">言語</v-row>
                                                     <v-row  align-content="center">フレームワーク</v-row>
                                                     <v-row  align-content="center">ライブラリ</v-row>
                                                 </v-col>
-                                                <v-col cols="9">
+                                                <v-spacer></v-spacer>
+                                                <v-col cols="7">
                                                     <v-row align-content="center">{{ showDialogProject.environments.language }}</v-row>
                                                     <v-row align-content="center">{{ showDialogProject.environments.framework }}</v-row>
                                                     <v-row align-content="center">{{ showDialogProject.environments.library }}</v-row>
