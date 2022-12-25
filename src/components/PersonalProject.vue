@@ -66,46 +66,105 @@
                                         詳細
                                     </v-btn>
                                 </template> -->
-                                <v-card>
+                                <v-card
+                                    class="mx-auto"
+                                >
+                                    <v-card-text>
+                                        <p class="text-h5"> {{ showDialogProject.title }} </p>
+                                    </v-card-text>
+                                    <v-divider></v-divider>
 
-                                    <v-card-title> {{ showDialogProject.title }}</v-card-title>
+                                    <v-card-text>
+                                        <p class="text-h5"> 開発環境 </p>
+                                        <div class="ml-3 mt-4 mb-3">
+                                            <v-row class="">
 
-                                    <v-row class="ma-2" align="center">
-                                        <v-col>開発環境</v-col>
-                                        <v-col>
-                                            <v-row  align-content="center" class="blue-b"> 言語</v-row>
-                                            <v-row  align-content="center" class="blue-b"> フレームワーク</v-row>
-                                            <v-row  align-content="center"> ライブラリ</v-row>
-                                        </v-col>
-                                        <v-col>
-                                            <v-row align-content="center"> {{ showDialogProject.environments.language }}</v-row>
-                                            <v-row align-content="center"> {{ showDialogProject.environments.framework }}</v-row>
-                                            <v-row align-content="center"> {{ showDialogProject.environments.library }}</v-row>
-                                        </v-col>
-                                    </v-row>
-
-                                    <v-card-text> {{ showDialogProject.detail }}</v-card-text>
+                                                <v-col cols="3">
+                                                    <v-row  align-content="center">言語</v-row>
+                                                    <v-row  align-content="center">フレームワーク</v-row>
+                                                    <v-row  align-content="center">ライブラリ</v-row>
+                                                </v-col>
+                                                <v-col cols="9">
+                                                    <v-row align-content="center">{{ showDialogProject.environments.language }}</v-row>
+                                                    <v-row align-content="center">{{ showDialogProject.environments.framework }}</v-row>
+                                                    <v-row align-content="center">{{ showDialogProject.environments.library }}</v-row>
+                                                </v-col>
+                                            </v-row>
+                                       </div>
+                                        
                                     
-                                    <v-row>
-                                        <v-col>
-                                            <v-icon
-                                                large
-                                                @click="jumpGithubPage(showDialogProject.url)"
-                                            >
-                                                mdi-github                       
-                                            </v-icon>
-                                        </v-col>
-                                        <v-col>
-                                            <v-card-actions>
+                                    </v-card-text>
+                                    <v-divider></v-divider>
+                                    <v-card-text>
+                                        <p class="text-h5"> 詳細 </p>
+                                        <div class="my-1">
+                                            {{ showDialogProject.detail }}
+                                        </div>
+                                        
+                                    </v-card-text>
+                                    
+                                    <!-- <v-card-title> {{ showDialogProject.title }}</v-card-title>
+                                    <v-divider></v-divider>
+
+                                    <v-card-title class="">開発環境</v-card-title>
+
+                                    <v-card-text class="">
+                                        
+                                        <v-row class=" px-1">
+
+                                            <v-col cols="3">
+                                                <v-row  align-content="center">言語</v-row>
+                                                <v-row  align-content="center">フレームワーク</v-row>
+                                                <v-row  align-content="center">ライブラリ</v-row>
+                                            </v-col>
+                                            <v-col cols="9">
+                                                <v-row align-content="center">{{ showDialogProject.environments.language }}</v-row>
+                                                <v-row align-content="center">{{ showDialogProject.environments.framework }}</v-row>
+                                                <v-row align-content="center">{{ showDialogProject.environments.library }}</v-row>
+                                            </v-col>
+                                        </v-row>
+                                    
+                                    </v-card-text>
+                                    
+                                    
+                                    <v-divider></v-divider>
+
+                                    <v-card-title >詳細</v-card-title>
+
+                                    <div>
+                                        <v-card-text> {{ showDialogProject.detail }}</v-card-text>
+                                    </div> -->
+                                
+                                    
+                                    <v-row >
+                                        <v-spacer></v-spacer>
+                                        <v-col cols="2" >
+                                            
                                                 <v-btn
                                                     color="blue darken-1"
-                                                    text
+                                                    :rounded=true
+                                                    @click="jumpGithubPage(showDialogProject.url)"
+                                                >
+                                                    <v-icon
+                                                        large
+                                                    >
+                                                        mdi-github                       
+                                                    </v-icon>
+                                                </v-btn>
+                                            
+                                        </v-col>
+                                        <v-col cols="2" >
+                                            
+                                                <v-btn
+                                                    color="blue darken-1"
+                                                    :rounded=true
                                                     @click="closeDialogProjectDetail"
                                                 >
                                                     Cancel
                                                 </v-btn>
-                                            </v-card-actions>
+                                            
                                         </v-col>
+                                        <v-spacer></v-spacer>
                                     </v-row>
 
                                     
