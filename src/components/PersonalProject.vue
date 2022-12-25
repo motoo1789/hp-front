@@ -8,9 +8,9 @@
     >
         <v-container>
             <v-row justify="start">
-                <v-col  cols="5"> 自分の写真
+                <v-col  cols="5"> 
                     <v-img
-                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+                        :src="project.img"
                         height="200px"
                     ></v-img>
                 </v-col>
@@ -29,9 +29,8 @@
                             </v-icon>
                         </v-cols>
                     </v-row>
-                    
+    
                     <v-divider></v-divider>
-
                     
                     <v-divider></v-divider>
                     <v-card-title>概要</v-card-title>
@@ -47,28 +46,21 @@
                             <v-btn 
                                 rounded="lg"
                                 color="infoBlue"
-                                @click="openDialogProjectDetail(project)"
+                                @click.stop="openDialogProjectDetail(project)"
                             >
                                 詳細
                             </v-btn>
-                            
 
                             <v-dialog
                                 v-model="dialogProjectDetail"
-                                max-width="750"
                             >
-                                <!-- <template v-slot:activator="{ on }"> いらないのでは
-                                    <v-btn
-                                        rounded="lg"
-                                        color="infoBlue"
-                                        v-on="on"
-                                    >
-                                        詳細
-                                    </v-btn>
-                                </template> -->
                                 <v-card
                                     class="mx-auto"
+                                    :max-width="750"
                                 >
+                                    <video controls class="ma-2 movie-size-parent">
+                                        <source :src="showDialogProject.movie" type="video/mp4">
+                                    </video>
                                     <v-card-text>
                                         <p class="text-h5"> {{ showDialogProject.title }} </p>
                                     </v-card-text>
@@ -77,7 +69,7 @@
                                     <v-card-text>
                                         <p class="text-h5"> 開発環境 </p>
                                         <div class="ml-3 mt-4 mb-3">
-                                            <v-row class="">
+                                            <v-row class="" style="{width:auto}">
 
                                                 <v-col xs="4" sm="3" md="3" lg="3" xl="3">
                                                     <v-row  align-content="center">言語</v-row>
@@ -92,94 +84,49 @@
                                                 </v-col>
                                             </v-row>
                                        </div>
-                                        
-                                    
                                     </v-card-text>
+
                                     <v-divider></v-divider>
+                                    
                                     <v-card-text>
                                         <p class="text-h5"> 詳細 </p>
                                         <div class="my-1">
                                             {{ showDialogProject.detail }}
                                         </div>
-                                        
-                                    </v-card-text>
-                                    
-                                    <!-- <v-card-title> {{ showDialogProject.title }}</v-card-title>
-                                    <v-divider></v-divider>
-
-                                    <v-card-title class="">開発環境</v-card-title>
-
-                                    <v-card-text class="">
-                                        
-                                        <v-row class=" px-1">
-
-                                            <v-col cols="3">
-                                                <v-row  align-content="center">言語</v-row>
-                                                <v-row  align-content="center">フレームワーク</v-row>
-                                                <v-row  align-content="center">ライブラリ</v-row>
-                                            </v-col>
-                                            <v-col cols="9">
-                                                <v-row align-content="center">{{ showDialogProject.environments.language }}</v-row>
-                                                <v-row align-content="center">{{ showDialogProject.environments.framework }}</v-row>
-                                                <v-row align-content="center">{{ showDialogProject.environments.library }}</v-row>
-                                            </v-col>
-                                        </v-row>
-                                    
-                                    </v-card-text>
-                                    
-                                    
-                                    <v-divider></v-divider>
-
-                                    <v-card-title >詳細</v-card-title>
-
-                                    <div>
-                                        <v-card-text> {{ showDialogProject.detail }}</v-card-text>
-                                    </div> -->
-                                
-                                    
+                                    </v-card-text>                                
                                     <v-row >
                                         <v-spacer></v-spacer>
                                         <v-col cols="2" >
-                                            
-                                                <v-btn
-                                                    color="blue darken-1"
-                                                    :rounded=true
-                                                    @click="jumpGithubPage(showDialogProject.url)"
+                                            <v-btn
+                                                color="blue darken-1"
+                                                :rounded=true
+                                                @click="jumpGithubPage(showDialogProject.url)"
+                                            >
+                                                <v-icon
+                                                    large
                                                 >
-                                                    <v-icon
-                                                        large
-                                                    >
-                                                        mdi-github                       
-                                                    </v-icon>
-                                                </v-btn>
-                                            
+                                                    mdi-github                       
+                                                </v-icon>
+                                            </v-btn>
                                         </v-col>
-                                        <v-col cols="2" >
-                                            
-                                                <v-btn
-                                                    color="blue darken-1"
-                                                    :rounded=true
-                                                    @click="closeDialogProjectDetail"
-                                                >
-                                                    Cancel
-                                                </v-btn>
-                                            
+                                        <v-col cols="2" >   
+                                            <v-btn
+                                                color="blue darken-1"
+                                                :rounded=true
+                                                @click="closeDialogProjectDetail"
+                                            >
+                                                閉じる
+                                            </v-btn>
                                         </v-col>
                                         <v-spacer></v-spacer>
                                     </v-row>
-
-                                    
                                 </v-card>
-                                
                             </v-dialog>
-                            
-                            
                         </v-col>
                     </v-row>
                 </v-col>
             </v-row>
         </v-container>
-        
     </v-card>
   </div>
 </template>
@@ -203,7 +150,8 @@ export default {
                     abstract: "シャドウバースの勝敗記録をするアプリケーション",
                     detail: "シャドウバースの勝敗記録をするアプリケーションシャドウバースの勝敗記録をするアプリケーションシャドウバースの勝敗記録をするアプリケーションシャドウバースの勝敗記録をするアプリケーションシャドウバースの勝敗記録をするアプリケーションシャドウバースの勝敗記録をするアプリケーション",
                     url: "https://github.com/motoo1789/WinRate",
-                    img: "パス",
+                    img: require(`@/assets/HP用WinRate写真.png`),
+                    movie: require(`@/assets/HP用WinRate.mp4`),
                 },
                 {
                     projectNum: 2,
@@ -216,10 +164,10 @@ export default {
                     abstract: "修士研究で作成したアプリケーション描画部分",
                     detail: "修士研究で作成したアプリケーション修士研究で作成したアプリケーション描画部分修士研究で作成したアプリケーション描画部分修士研究で作成したアプリケーション描画部分修士研究で作成したアプリケーション描画部分修士研究で作成したアプリケーション描画部分",
                     url: "https://github.com/motoo1789/KIfU-drawer",
-                    img: "パス",
+                    img: require(`@/assets/HP用UMLDS.png`),
+                    movie: require(`@/assets/HP用UMLDS.mp4`),
                 },
-                
-            ]
+            ],
         }
     },
     methods: {
@@ -233,17 +181,16 @@ export default {
             this.selectProjectIndex = this.projects.indexOf(project)
             this.showDialogProject = Object.assign({}, project)
             this.dialogProjectDetail = true
-        }
-    }
+        },
+    },
 }
 </script>
 
 <style>
-.custom-font-color-white {
-    color: white,
-    
-}
-.aa{
-    color : #2196F3;
-}
+    .custom-font-color-white {
+        color: white,
+    }
+    .movie-size-parent {
+        width: 100%;
+    }
 </style>

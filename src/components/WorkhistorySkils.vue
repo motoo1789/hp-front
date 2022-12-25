@@ -53,20 +53,6 @@
                                     </v-rating>
 
                             </v-row>
-                            <!-- <v-row align="center">
-                                <v-col class="mx-1" cols=3>
-                                    {{ rating.skill }}
-                                </v-col>
-                                <v-col >
-                                    <v-rating
-                                        :model-value="rating.value"
-                                        readonly="true"
-                                        color="#82b0ff"
-                                        class = "blue-b"
-                                    >
-                                    </v-rating>
-                                </v-col>
-                            </v-row> -->
                         </v-col>
                     </v-row>               
             </v-col>
