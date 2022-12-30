@@ -1,4 +1,5 @@
 <template>
+  <HobbyAnime />
   <PersonalProject />
   <ProfileCard />
   <WorkhistorySkils />
@@ -14,6 +15,7 @@ import HelloWorld from '../components/HelloWorld.vue';
 import ProfileCard from '../components/ProfileCard.vue';
 import WorkhistorySkils from '../components/WorkhistorySkils.vue';
 import PersonalProject from '../components/PersonalProject.vue';
+import HobbyAnime from '../components/HobbyAnime.vue';
 
 
 export default defineComponent({
@@ -24,6 +26,7 @@ export default defineComponent({
     ProfileCard,
     WorkhistorySkils,
     PersonalProject,
+    HobbyAnime,
   },
 });
 </script>
