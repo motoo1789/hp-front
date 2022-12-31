@@ -38,7 +38,6 @@
                             lg="4"
                             md="6"
                             sm="12"
-
                         >
                             <v-row align="center">
                                 

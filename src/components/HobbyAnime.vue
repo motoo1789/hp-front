@@ -12,7 +12,17 @@
             <v-card-text >
                 <v-window v-model="tab" v-for="(animetitles, animeskey) in arrayAnimeTitles" :key="animeskey">
                     <v-window-item :value=animeskey> 
-                        <v-list :items="animetitles"></v-list>
+                        <v-row>
+                            <v-col v-for="(animetitle, animeskey) in animetitles" :key="animeskey"
+                                lg="4"    
+                                md="6"
+                                sm="12"
+                            >
+                                {{ animetitle }}
+                                <!-- <v-list :items="animetitles"></v-list> -->
+                            </v-col>
+                        </v-row>
+                        
                         <!-- <p v-for="(anime, animekey) in animes" :key="animekey" >
                             {{ anime }}
                         </p> -->   
