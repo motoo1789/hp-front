@@ -1,12 +1,20 @@
 <template>
     <div>
         <v-card>
+            <v-card-title class="text-center justify-center py-6">
+                
+                    アニメ
+            </v-card-title>
             <v-tabs
                 v-model="tab"
                 bg-color="primary"
-                v-for="(tabitem,tabitemkey) in tabitems" :key="tabitemkey"
+                fixed-tabs
+                show-arrows
             >
-                <v-tab :value=tabitemkey> {{ tabitem }}</v-tab>
+                <v-tab v-for="(tabitem,tabitemkey) in tabitems" :key="tabitemkey" :value=tabitemkey>
+                    {{ tabitem }}
+                </v-tab>
+                <!-- <v-tab :value=tabitemkey> {{ tabitem }}</v-tab> -->
             </v-tabs>
 
             <v-card-text >
