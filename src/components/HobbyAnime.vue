@@ -24,7 +24,8 @@
                             <v-col v-for="(animetitle, animeskey) in animetitles" :key="animeskey"
                                 lg="4"    
                                 md="6"
-                                sm="12"
+                                sm="6"
+                                xs="12"
                             >
                                 {{ animetitle }}
                                 <!-- <v-list :items="animetitles"></v-list> -->
@@ -37,6 +38,40 @@
                     </v-window-item>
                 </v-window>
             </v-card-text>
+        </v-card>
+
+        <v-card>
+            <v-card-title class="text-center justify-center py-6">
+                マンガ・ライトノベル
+            </v-card-title>
+            
+            <v-container>
+                <v-row>
+                    <v-col v-for="(mangatitle, mangakey) in arrayMangaTitles" :key="mangakey"
+                        lg="4"    
+                        md="6"
+                        sm="6"
+                        xs="12"
+                    >
+                        {{ mangatitle }}
+                    </v-col>
+                </v-row>
+                <v-divider class="my-2"></v-divider>
+                <v-row>
+                    <v-col v-for="(lightnoveltitle, lightnovelkey) in arrayLightNovelTitles" :key="lightnovelkey"
+                        xs="12"
+                        lg="4"    
+                        md="6"
+                        sm="6"
+                        
+                        class="blue-b"
+                    >
+                        {{ lightnoveltitle }}
+                        <!-- <v-list :items="animetitles"></v-list> -->
+                    </v-col>
+                </v-row>
+            </v-container>
+            
         </v-card>
     </div>
   </template>
@@ -70,7 +105,10 @@
                 ya : ["よう実","やがて君になる"],
                 ra : ["リトルバスターズ","ログ・ホライズン"],
                 wa : [],
-              }
+              },
+              arrayMangaTitles : ["青のエクソシスト","咲","葬送のフリーレン","ぼっちざろっく",],
+              arrayLightNovelTitles : ["アクセルワールド","ソードアートオンライン","精霊幻想記","ヴァイオレットエヴァーガーデン",]
+              
 
           }
       },
@@ -81,4 +119,7 @@
   </script>
   
   <style>
+  .blue-b{
+        border: 1px blue solid
+    }
   </style>

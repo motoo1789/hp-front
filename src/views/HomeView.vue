@@ -1,4 +1,5 @@
 <template>
+  <HomePage />
   <HobbyAnime />
   <PersonalProject />
   <ProfileCard />
@@ -16,6 +17,7 @@ import ProfileCard from '../components/ProfileCard.vue';
 import WorkhistorySkils from '../components/WorkhistorySkils.vue';
 import PersonalProject from '../components/PersonalProject.vue';
 import HobbyAnime from '../components/HobbyAnime.vue';
+import HomePage from '../components/HomePage.vue';
 
 
 export default defineComponent({
@@ -27,6 +29,7 @@ export default defineComponent({
     WorkhistorySkils,
     PersonalProject,
     HobbyAnime,
+    HomePage,
   },
 });
 </script>

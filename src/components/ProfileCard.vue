@@ -169,11 +169,4 @@ export default {
     border: 1px blue solid
 }
 
-.green-b{
-    border: 1px green solid
-}
-
-.red-b{
-    border: 1px red solid
-}
 </style>
