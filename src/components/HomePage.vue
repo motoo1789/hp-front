@@ -34,6 +34,8 @@
             </tr>
         </tbody>
     </v-table>
+
+    <a href="/infohistory"> >> 履歴を見る </a>
   </div>
 </template>
 

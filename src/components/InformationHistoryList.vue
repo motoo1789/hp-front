@@ -1,5 +1,7 @@
 <template>
-  
+  <div>
+    jfskda;
+  </div>
 </template>
 
 <script>
