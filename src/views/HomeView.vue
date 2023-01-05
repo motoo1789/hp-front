@@ -5,6 +5,7 @@
   <ProfileCard />
   <WorkhistorySkils />
   <HelloWorld />
+  <!-- <InformationHistoryView /> -->
   
 </template>
 
@@ -18,6 +19,7 @@ import WorkhistorySkils from '../components/WorkhistorySkils.vue';
 import PersonalProject from '../components/PersonalProject.vue';
 import HobbyAnime from '../components/HobbyAnime.vue';
 import HomePage from '../components/HomePage.vue';
+// import InformationHistoryView from '../views/InformationHistoryView.vue'
 
 
 export default defineComponent({
@@ -30,6 +32,7 @@ export default defineComponent({
     PersonalProject,
     HobbyAnime,
     HomePage,
+    // InformationHistoryView,
   },
 });
 </script>

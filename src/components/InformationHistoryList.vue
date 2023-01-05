@@ -1,12 +1,26 @@
 <template>
   <div>
-    jfskda;
+
   </div>
 </template>
 
 <script>
-export default {
 
+export default {
+  nama: "HistoryList",
+  // props: ["sample"],
+  props: {
+    books: Object
+    
+    //informationhistorys: Object,
+    
+  },
+  created() {
+    console.log(this.books)
+  },
+  methods : {
+    
+  }
 }
 </script>
 
