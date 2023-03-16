@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="text-subtitle-2 mb-2">新着情報</div>
-        <v-expansion-panels>
-            <v-expansion-panel
-                v-for="(newinformation, key) in homepageNewInformations"
-                :key="key"
-                
-            >
-                <v-expansion-panel-title>{{ newinformation.updatedate }}   {{ newinformation.abstract }}</v-expansion-panel-title>
-              <v-expansion-panel-text>{{ newinformation.detaile }}</v-expansion-panel-text>
-            </v-expansion-panel>
-        </v-expansion-panels>
-    <v-table>
+      <v-expansion-panels>
+          <v-expansion-panel
+              v-for="(newinformation, key) in homepageNewInformations"
+              :key="key"
+              
+          >
+              <v-expansion-panel-title>{{ newinformation.updatedate }}   {{ newinformation.abstract }}</v-expansion-panel-title>
+            <v-expansion-panel-text>{{ newinformation.detaile }}</v-expansion-panel-text>
+          </v-expansion-panel>
+      </v-expansion-panels>
+      <v-table>
         <tbody>
             <tr
             v-for="(newinformation, key) in homepageNewInformations"
@@ -21,7 +21,7 @@
             <td>{{ newinformation.abstract }}</td>
             </tr>
         </tbody>
-    </v-table>
+      </v-table>
 
     <!-- ルーターリンクじゃね-->
 <!--<router-link :to="{ name: 'InformationHistoryView', params: {page: Number(page) + 1, sample: this.sample } }">
@@ -34,6 +34,7 @@
     <v-chip variant="text" @click="showNewInformationHistory">
         >> 履歴を見る
     </v-chip>
+
   </div>
 </template>
 
@@ -64,15 +65,18 @@ export default {
           updatedate: '2022/01/05',
           abstract: "キーボードキーボード",
           detaile: "キーボードキーボードキーボードキーボードキーボードキーボード",
-        },{
+        },
+        {
           updatedate: '2022/01/06',
           abstract: "サンプル　新年",
           detaile: "サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年",
-        },{
+        },
+        {
           updatedate: '2022/01/07',
           abstract: "サンプル　新年",
           detaile: "サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年",
-        },{
+        },
+        {
           updatedate: '2022/01/08',
           abstract: "サンプル　新年",
           detaile: "サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年",
