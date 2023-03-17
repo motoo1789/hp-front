@@ -17,28 +17,21 @@
         <v-list-item v-for="sidelist in sidelists" 
           :key="sidelist.titleJP" 
           prepend-icon="subtitle.icon"
-          @click="navigateTo(item.path)"
-        ></v-list-item>
-        <!-- 
-          <v-list-item prepend-icon="mdi-home-outline" title="Home" value="home"></v-list-item>
-        <v-list-item prepend-icon="mdi-account-outline" title="About" value="about"></v-list-item>
-        <v-list-item prepend-icon="mdi-gamepad-variant-outline" title="Hobby" value="about"></v-list-item>
-        <v-list-item prepend-icon="mdi-file-code-outline" title="Project" value="about"></v-list-item>
-        <v-list-item prepend-icon="mdi-card-account-mail-outline" title="Contact" value="about"></v-list-item> 
-        -->
+          @click="changeComponent(sidelist.titleENG)"
+        >
+          {{ sidelist.titleJP }}
+        </v-list-item> 
       </v-list>
     </v-navigation-drawer>
 
     <v-main>
-      <router-view></router-view>
+      <component :is="currentComponent" />
+    </v-main>
       <!-- 
       <v-container>
         <HomePage />
       </v-container> 
       -->
-    </v-main>
-
-
     <!--
     <InformationHistoryView />
     <HobbyAnime />
@@ -47,10 +40,7 @@
     <WorkhistorySkils />
     <-->
   </v-app>
-  
 
-  
-  
 </template>
 
 <script>
@@ -58,11 +48,11 @@ import { defineComponent } from 'vue';
 
 // Components
 // import HelloWorld from '../components/HelloWorld.vue';
-// import ProfileCard from '../components/ProfileCard.vue';
+import Profile from '../components/ProfileCard.vue';
 // import WorkhistorySkils from '../components/WorkhistorySkils.vue';
 // import PersonalProject from '../components/PersonalProject.vue';
 // import HobbyAnime from '../components/HobbyAnime.vue';
-import HomePage from '../components/HomePage.vue';
+import Home from '../components/HomePage.vue';
 // import InformationHistoryView from '../views/InformationHistoryView.vue'
 
 
@@ -71,27 +61,29 @@ export default defineComponent({
 
   components: {
     // HelloWorld,
-    // ProfileCard,
+    Profile,
     // WorkhistorySkils,
     // PersonalProject,
     // HobbyAnime,
-    HomePage,
+    Home,
     // InformationHistoryView,
   },
-  method: {
-    navigateTo(path) {
-      this.$router.push(path)
+  methods: {
+    changeComponent(component) {
+      console.log("ここまで来た")
+      this.currentComponent = component
     }
 
   },
 
   data: () => ({
     drawer: null,
+    currentComponent: "Home",
     sidelists: [
-      {titleJP: "ホーム", titleENG: "Home", path: "/", icon:"mdi-home-outline"},
+      {titleJP: "ホーム", titleENG: "Home", path: "/",  icon:"mdi-home-outline"},
       {titleJP: "プロフィール", titleENG: "Profile", path: "/profile", icon:"mdi-account-outline"},
     ]
-  })
+  }),
 
 
 });

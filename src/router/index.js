@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+// import HomePage from '../components/HomePage.vue'
 import InformationHistoryList from '../components/InformationHistoryList.vue'
 import ProfileCard from '../components/ProfileCard.vue'
+import HomeView from '../views/HomeView.vue'
+
 
 const routes = [
   {
@@ -10,7 +12,7 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/infomationhistory/:books',
+    path: '/infomationhistory/',
     name: 'InformationHistoryList',
     component: InformationHistoryList,
     props: route => ({
