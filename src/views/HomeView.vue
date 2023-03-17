@@ -1,11 +1,13 @@
 <template>
-  <InformationHistoryView />
-  <HomePage />
-  <HobbyAnime />
-  <PersonalProject />
-  <ProfileCard />
-  <WorkhistorySkils />
-  <HelloWorld />
+  <div>
+    <InformationHistoryView />
+    <HomePage />
+    <HobbyAnime />
+    <PersonalProject />
+    <ProfileCard />
+    <WorkhistorySkils />
+  </div>
+
   
   
 </template>
@@ -14,7 +16,7 @@
 import { defineComponent } from 'vue';
 
 // Components
-import HelloWorld from '../components/HelloWorld.vue';
+// import HelloWorld from '../components/HelloWorld.vue';
 import ProfileCard from '../components/ProfileCard.vue';
 import WorkhistorySkils from '../components/WorkhistorySkils.vue';
 import PersonalProject from '../components/PersonalProject.vue';
@@ -27,7 +29,7 @@ export default defineComponent({
   name: 'HomeView',
 
   components: {
-    HelloWorld,
+    // HelloWorld,
     ProfileCard,
     WorkhistorySkils,
     PersonalProject,

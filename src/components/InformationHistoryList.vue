@@ -24,7 +24,7 @@
       </v-table> -->
       <div class="text-center">
         <v-pagination
-          v-model="page"
+          v-model="currentpage"
           :length=jsonhistory.length
           :total-visible="3"
           @input="onPageChange"
