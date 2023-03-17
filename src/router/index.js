@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import InformationHistoryList from '../components/InformationHistoryList.vue'
+import ProfileCard from '../components/ProfileCard.vue'
 
 const routes = [
   {
@@ -15,7 +16,11 @@ const routes = [
     props: route => ({
       books: route.params.books
     }),
-    
+  },
+  {
+    path: '/profile',
+    name: 'ProfileCard',
+    component: ProfileCard,
   },
   {
     path: '/about',

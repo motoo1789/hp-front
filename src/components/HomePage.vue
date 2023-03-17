@@ -11,7 +11,7 @@
             <v-expansion-panel-text>{{ newinformation.detaile }}</v-expansion-panel-text>
           </v-expansion-panel>
       </v-expansion-panels>
-      <v-table>
+      <!-- <v-table>
         <tbody>
             <tr
             v-for="(newinformation, key) in homepageNewInformations"
@@ -21,7 +21,7 @@
             <td>{{ newinformation.abstract }}</td>
             </tr>
         </tbody>
-      </v-table>
+      </v-table> -->
 
     <!-- ルーターリンクじゃね-->
 <!--<router-link :to="{ name: 'InformationHistoryView', params: {page: Number(page) + 1, sample: this.sample } }">
@@ -35,6 +35,26 @@
         >> 履歴を見る
     </v-chip>
 
+    <v-card
+        class="mx-auto"
+        shaped="true"
+        
+    >
+        <v-row class="blue-b" justify="start">
+            <v-col class="green-b" cols="7">
+                <v-card-title>
+                    ページ概要
+                </v-card-title>
+                <v-divider></v-divider>
+                <v-card-text>
+                    <p>山崎貴弘と申します。</p>
+                    <p>Vueを使ってみたくてホームページを作り直しました。</p>
+                    <p>プロフィール 最近のニュース 趣味 成果物 などについて紹介をしています。</p>
+                    <p>この規模でなんでこんなことしてるの？などいろいろ突っ込みポイントはあるかもしれませんが、暖かく見守ってください(良ければContactから指摘がいただけると勉強になります)</p>
+                </v-card-text>
+            </v-col>
+        </v-row>
+    </v-card>
   </div>
 </template>
 
@@ -45,41 +65,26 @@ export default {
     return {
       homepageNewInformations: [
         {
-          updatedate: '2022/01/01',
-          abstract: "新年の挨拶",
+          updatedate: '2023/03/20',
+          abstract: "日本工業大学修了",
           detaile: "サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年",
         },
         {
-          updatedate: '2022/01/02',
-          abstract: "サンプル　fdsfsaf",
+          updatedate: '2023/02/20',
+          abstract: "MODELSWARD発表",
           detaile: "サンプル　fdsafdsadfasサンプル　fdsafdsadfasサンプル　fdsafdsadfasサンプル　fdsafdsadfasサンプル　fdsafdsadfas",
         },{
-          updatedate: '2022/01/03',
-          abstract: "サンプル　新年",
+          updatedate: '2023/02/13',
+          abstract: "修士研究公聴会",
           detaile: "サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年",
         },{
-          updatedate: '2022/01/04',
-          abstract: "サンプル　fdsfsafサンプル　fdsfsaf",
+          updatedate: '2023/02/09',
+          abstract: "学部生　卒業研究発表会聴講",
           detaile: " 林檎ゴリラ　サンプル　fdsfsaf",
         },{
-          updatedate: '2022/01/05',
-          abstract: "キーボードキーボード",
-          detaile: "キーボードキーボードキーボードキーボードキーボードキーボード",
-        },
-        {
-          updatedate: '2022/01/06',
-          abstract: "サンプル　新年",
-          detaile: "サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年",
-        },
-        {
-          updatedate: '2022/01/07',
-          abstract: "サンプル　新年",
-          detaile: "サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年",
-        },
-        {
-          updatedate: '2022/01/08',
-          abstract: "サンプル　新年",
-          detaile: "サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年サンプル　新年",
+          updatedate: '2022/01/01',
+          abstract: "あけましておめでとうございます",
+          detaile: "今年もよろしくお願いします",
         },
       ],
       books: [
