@@ -1,29 +1,38 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import HomePage from '../components/HomePage.vue'
-import InformationHistoryList from '../components/InformationHistoryList.vue'
 import ProfileCard from '../components/ProfileCard.vue'
 import HomeView from '../views/HomeView.vue'
+import Hobby from '../components/HobbyAnime.vue';
 
 
 const routes = [
   {
     path: '/',
-    name: 'HomeView',
-    component: HomeView
+    component: HomeView,
+    children: [
+      {
+        path: 'profile',
+        name: 'profile',
+        component: ProfileCard
+      },
+      {
+        path: "hobby",
+        name: "hobby",
+        component: Hobby
+      },
+    ]
   },
-  {
-    path: '/infomationhistory/',
-    name: 'InformationHistoryList',
-    component: InformationHistoryList,
-    props: route => ({
-      books: route.params.books
-    }),
-  },
-  {
-    path: '/profile',
-    name: 'ProfileCard',
-    component: ProfileCard,
-  },
+  // {
+  //   path: '/profile',
+  //   name: 'ProfileCard',
+  //   component: ProfileCard,
+  // },
+  // {
+  //   path: '/hobby',
+  //   name: 'Hobby',
+  //   component: Hobby,
+  // },
+
   {
     path: '/about',
     name: 'about',

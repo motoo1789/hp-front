@@ -16,57 +16,39 @@
       <v-list>
         <v-list-item v-for="sidelist in sidelists" 
           :key="sidelist.titleJP" 
-          prepend-icon="subtitle.icon"
+          prepend-icon="sidelist.icon"
           @click="changeComponent(sidelist.titleENG)"
         >
-          {{ sidelist.titleJP }}
+          <router-link :to="sidelist.path" > {{ sidelist.titleJP }}</router-link> 
         </v-list-item> 
       </v-list>
     </v-navigation-drawer>
 
     <v-main>
-      <component :is="currentComponent" />
+      <div class="blue-b">
+        <v-container>
+          <router-view /> 
+        </v-container> 
+      </div>
+      
     </v-main>
-      <!-- 
-      <v-container>
-        <HomePage />
-      </v-container> 
-      -->
-    <!--
-    <InformationHistoryView />
-    <HobbyAnime />
-    <PersonalProject />
-    <ProfileCard />
-    <WorkhistorySkils />
-    <-->
   </v-app>
 
 </template>
+<style>
+  .blue-b {
+    border: 1px blue solid
+  }
+</style>
 
 <script>
 import { defineComponent } from 'vue';
-
-// Components
-// import HelloWorld from '../components/HelloWorld.vue';
-import Profile from '../components/ProfileCard.vue';
-// import WorkhistorySkils from '../components/WorkhistorySkils.vue';
-// import PersonalProject from '../components/PersonalProject.vue';
-// import HobbyAnime from '../components/HobbyAnime.vue';
-import Home from '../components/HomePage.vue';
-// import InformationHistoryView from '../views/InformationHistoryView.vue'
-
 
 export default defineComponent({
   name: 'HomeView',
 
   components: {
-    // HelloWorld,
-    Profile,
-    // WorkhistorySkils,
-    // PersonalProject,
-    // HobbyAnime,
-    Home,
-    // InformationHistoryView,
+
   },
   methods: {
     changeComponent(component) {
@@ -78,13 +60,11 @@ export default defineComponent({
 
   data: () => ({
     drawer: null,
-    currentComponent: "Home",
     sidelists: [
-      {titleJP: "ホーム", titleENG: "Home", path: "/",  icon:"mdi-home-outline"},
-      {titleJP: "プロフィール", titleENG: "Profile", path: "/profile", icon:"mdi-account-outline"},
+      {titleJP: "ホーム",       titleENG: "Home",     path: "/",        icon:"mdi-home-outline", link: {name: "home"}},
+      {titleJP: "プロフィール",  titleENG: "Profile",  path: "/profile", icon:"mdi-account-outline",link: {name: "profile"}},
+      {titleJP: "ホビー",       titleENG: "Hobby",    path: "/hobby",   icon:"mdi-gamepad-variant-outline", link: {name: "hobby"}},
     ]
   }),
-
-
 });
 </script>
