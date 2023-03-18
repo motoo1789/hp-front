@@ -3,13 +3,29 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ProfileCard from '../components/ProfileCard.vue'
 import HomeView from '../views/HomeView.vue'
 import Hobby from '../components/HobbyAnime.vue';
+import Project from '../components/PersonalProject.vue';
+import HomePage from '../components/HomePage.vue';
+import Information from '../components/InformationHistoryList.vue';
+import Contact from "../components/ContactForm.vue"
+
 
 
 const routes = [
   {
     path: '/',
     component: HomeView,
+    redirect: "/home",
     children: [
+      {
+        path: 'home',
+        name: 'home',
+        component: HomePage
+      },
+      {
+        path: 'information',
+        name: 'information',
+        component: Information
+      },
       {
         path: 'profile',
         name: 'profile',
@@ -20,18 +36,19 @@ const routes = [
         name: "hobby",
         component: Hobby
       },
+      {
+        path: "project",
+        name: "project",
+        component: Project
+      },
+      {
+        path: "contact",
+        name: "contact",
+        component: Contact
+      },
     ]
   },
-  // {
-  //   path: '/profile',
-  //   name: 'ProfileCard',
-  //   component: ProfileCard,
-  // },
-  // {
-  //   path: '/hobby',
-  //   name: 'Hobby',
-  //   component: Hobby,
-  // },
+  
 
   {
     path: '/about',

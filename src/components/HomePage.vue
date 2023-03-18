@@ -99,10 +99,7 @@ export default {
       showNewInformationHistory() {
           console.log("チップをクリックしました")
           this.$router.push({
-            name:'InformationHistoryList',
-            params:{
-              books: this.books,
-            }
+            name:'information',
           })
       }
   }

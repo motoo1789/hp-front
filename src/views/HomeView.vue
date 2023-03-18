@@ -17,7 +17,6 @@
         <v-list-item v-for="sidelist in sidelists" 
           :key="sidelist.titleJP" 
           prepend-icon="sidelist.icon"
-          @click="changeComponent(sidelist.titleENG)"
         >
           <router-link :to="sidelist.path" > {{ sidelist.titleJP }}</router-link> 
         </v-list-item> 
@@ -25,12 +24,9 @@
     </v-navigation-drawer>
 
     <v-main>
-      <div class="blue-b">
         <v-container>
           <router-view /> 
-        </v-container> 
-      </div>
-      
+        </v-container>   
     </v-main>
   </v-app>
 
@@ -61,9 +57,12 @@ export default defineComponent({
   data: () => ({
     drawer: null,
     sidelists: [
-      {titleJP: "ホーム",       titleENG: "Home",     path: "/",        icon:"mdi-home-outline", link: {name: "home"}},
-      {titleJP: "プロフィール",  titleENG: "Profile",  path: "/profile", icon:"mdi-account-outline",link: {name: "profile"}},
-      {titleJP: "ホビー",       titleENG: "Hobby",    path: "/hobby",   icon:"mdi-gamepad-variant-outline", link: {name: "hobby"}},
+      {titleJP: "ホーム",           titleENG: "Home",     path: "/home",        icon:"mdi-home-outline"},
+      {titleJP: "新着情報",         titleENG: "Information",     path: "/information",   icon:"mdi-home-outline"},
+      {titleJP: "プロフィール",      titleENG: "Profile",  path: "/profile",    icon:"mdi-account-outline"},
+      {titleJP: "趣味",             titleENG: "Hobby",    path: "/hobby",       icon:"mdi-gamepad-variant-outline"},
+      {titleJP: "個人プロジェクト",  titleENG: "Project",    path: "/project",   icon:"mdi-file-code-outline"},
+      {titleJP: "連絡",             titleENG: "Contact",    path: "/contact",   icon:"mdi-card-account-mail-outline"},
     ]
   }),
 });
